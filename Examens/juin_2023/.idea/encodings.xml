@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/graphe/Graph.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/huffman/Huffman.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/minmax/Tree.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/recursion/Tree.java" charset="ISO-8859-1" />
+  </component>
+</project>
