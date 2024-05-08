@@ -59,19 +59,14 @@ public class Tree implements Iterable<Tree> {
 
 	// renvoie le nombre de fois que la valeur en parametre apparait dans l’arbre
 	public int nbNoeudEgalA(int x) {
+		int cpt = 0;
 		if (this.value == x) {
-			int count = 1;
-			for (Tree child : children) {
-				count += child.nbNoeudEgalA(x);
-			}
-			return count;
-		} else {
-			int count = 0;
-			for (Tree child : children) {
-				count += child.nbNoeudEgalA(x);
-			}
-			return count;
+			cpt++;
 		}
+		for (Tree tree : children) {
+			cpt += tree.nbNoeudEgalA(x);
+		}
+		return cpt;
 	}
 
 	// Renvoie un HashSet contenant les entiers presents dans l'arbre, sans doublons
