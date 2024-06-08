@@ -65,8 +65,8 @@ public class Graph {
 		return station;
 	}
 	
-	// renvoie l'ensemble des tronÁons entrants de la station 
-	// c‡d les tronÁons dont l'arrivee est la station en paramËtre
+	// renvoie l'ensemble des tron√ßons entrants de la station 
+	// c√†d les tron√ßons dont l'arrivee est la station en param√®tre
 	public Set<Troncon> tronconsEntrants(Station s){
 		Set<Troncon> set = new HashSet<>();
 		for (Entry<Station, Set<Troncon>> stationSetEntry : mapStationTroncons.entrySet()) {
@@ -79,9 +79,9 @@ public class Graph {
 		return set;
 	}
 
-	// affiche le chemin le plus court (en terme de nombre de troncon) entre la station de dÈpart
-	// et la station d'arrivÈe
-	// Pour afficher les troncons, on utilise simplement la mÈthode toString() de Troncon
+	// affiche le chemin le plus court (en terme de nombre de troncon) entre la station de d√©part
+	// et la station d'arriv√©e
+	// Pour afficher les troncons, on utilise simplement la m√©thode toString() de Troncon
 	public void calculerCheminMinimisantNombreTroncons(String depart, String arrivee) {
 		Queue<Station> file = new ArrayDeque<Station>();
 		Set<Station> visites = new HashSet<>();
@@ -108,20 +108,20 @@ public class Graph {
 			}
 		}
 
+		if (!previousStation.containsKey(endStation)) {
+			System.out.println("No path found from " + depart + " to " + arrivee);
+			return;
+		}
+
 		List<Station> path = new ArrayList<>();
-		for (Entry<Station, Station> stationStationEntry : previousStation.entrySet()) {
-			Station current = stationStationEntry.getKey();
-			path.add(current);
-			while (previousStation.containsKey(current)) {
-				current = previousStation.get(current);
-				path.add(current);
-			}
+		for (Station station = endStation; station != null; station = previousStation.get(station)) {
+			path.add(station);
 		}
 
 		Collections.reverse(path);
 
 		for (Station station : path) {
-			System.out.println(station);
+			System.out.println(station.getNom());
 		}
 	}
 	 
