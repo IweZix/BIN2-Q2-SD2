@@ -20,7 +20,8 @@ public class Tree {
   private static Triplet minBlue(Triplet leftRes, Triplet rightRes) {
     if (leftRes.getMinBlue() < rightRes.getMinBlue()) {
       return leftRes;
-    } else if (leftRes.getMinBlue() > rightRes.getMinBlue()) {
+    }
+    if (leftRes.getMinBlue() > rightRes.getMinBlue()) {
       return rightRes;
     }
     return new Triplet(leftRes.isLeftMove(), leftRes.getMinBlue(), leftRes.getMinOrange());
@@ -29,7 +30,8 @@ public class Tree {
   private static Triplet minOrange(Triplet leftRes, Triplet rightRes) {
     if (leftRes.getMinOrange() < rightRes.getMinOrange()) {
       return leftRes;
-    } else if (leftRes.getMinOrange() > rightRes.getMinOrange()) {
+    }
+    if (leftRes.getMinOrange() > rightRes.getMinOrange()) {
       return rightRes;
     }
     return new Triplet(rightRes.isLeftMove(), rightRes.getMinBlue(), rightRes.getMinOrange());
